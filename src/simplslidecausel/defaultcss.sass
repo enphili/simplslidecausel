@@ -1,0 +1,78 @@
+*
+  box-sizing: border-box
+.ss
+  position: relative
+  height: 100%
+  &__mask
+    overflow: hidden
+    height: 100%
+  &__band
+    display: flex
+    width: 100%
+    height: 100%
+  &__slide
+    display: block
+    width: 100%
+    height: 100%
+    flex-grow: 0
+    flex-shrink: 0
+    flex-basis: 100%
+  &__slide img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__prev-arrow, &__next-arrow
+    position: absolute
+    top: 0
+    bottom: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50px
+    transition: background-color 0.3s ease
+    cursor: pointer
+  &__prev-arrow
+    z-index: 91
+    right: auto
+    left: 0
+  &__next-arrow
+    z-index: 92
+    right: 0
+    left: auto
+  &__icon
+    border: solid #fff
+    border-width: 0 4px 4px 0
+    display: inline-block
+    padding: 8px
+  &__icon.next-icon
+    transform: rotate(-45deg)
+  &__icon.prev-icon
+    transform: rotate(135deg)
+  &__dots
+    bottom: -20px
+    position: absolute
+    z-index: 93
+    top: auto
+    right: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: auto
+  &__dot
+    height: 13px
+    width: 13px
+    border: none
+    border-radius: 50%
+    background-color: #000
+    cursor: pointer
+    transition: background-color 0.3s ease
+  &__dot:not(:last-child)
+    margin-right: 5px
+  &__dot--active
+    background-color: #b3b3b3
+@media only screen and (min-width: 992px)
+  .ss__dot:hover
+    background-color: #b3b3b3
+  .ss__prev-arrow:hover, .ss__next-arrow:hover
+    background-color: rgba(0, 0, 0, 0.15)
